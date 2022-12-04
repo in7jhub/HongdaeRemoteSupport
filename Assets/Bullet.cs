@@ -8,31 +8,12 @@ public class Bullet : MonoBehaviour
     public GameObject hitEffect;
     public float bulletSpd;
 
-
-    void Update()
-    {
-        delayedFollow();
-        checkHit();
-    }
-
-    void delayedFollow()
-    {
-        transform.GetComponent<Rigidbody>().velocity = (
-            targetMosq.transform.position - transform.position
-        ).normalized * bulletSpd * Time.deltaTime;
-    }
-
-    public void setTargetMosq(Transform _t)
-    {
-        targetMosq = _t;
-    }
-
-    void checkHit()
+    void FixedUpdate()
     {
         Vector2 v1 = transform.position;
         Vector2 v2 = targetMosq.transform.position;
-        
-        if((v1 - v2).magnitude < 0.45f)
+
+        if ((v1 - v2).magnitude < 0.45f)
         {
             SetOfMosqSet.killedMosqs++;
             GameObject h = Instantiate(hitEffect);
@@ -40,5 +21,21 @@ public class Bullet : MonoBehaviour
             targetMosq.gameObject.SetActive(false);
             Destroy(gameObject);
         }
+        else
+        {
+            Vector3 norm = (v2 - v1).normalized;
+            norm = new Vector3(
+                norm.x * bulletSpd * Time.deltaTime,
+                norm.y * bulletSpd * Time.deltaTime,
+                0
+            );
+            transform.position += norm;
+        }
     }
+
+    public void setTargetMosq(Transform _t)
+    {
+        targetMosq = _t;
+    }
+
 }

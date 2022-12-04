@@ -77,7 +77,7 @@ public class SetOfMosqSet : MonoBehaviour
     {
         if (!stopSpawn)
         {
-            setSpawnIntervalAndQueue(2);
+            setSpawnIntervalAndQueue(2f);
             spawn();
             phaseDown(checkPhaseFail());
             phaseUp(checkPhaseClear());
@@ -255,9 +255,9 @@ public class SetOfMosqSet : MonoBehaviour
         spawningMosqIdx = 0;
         yield return new WaitForSeconds(1f);
         isTargetSkin = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
+        changePhase(_phase);
         stopSpawn = false;
         isTargetSkin = true;
-        changePhase(_phase);
     }
 }

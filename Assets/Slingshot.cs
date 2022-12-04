@@ -33,15 +33,15 @@ public class Slingshot : MonoBehaviour
 
         if (SetOfMosqSet.phase == SetOfMosqSet.Phase.phase_1)
         {
-            shrinkSpd = 1 * 1.5f;
+            shrinkSpd = 0.9f * 1.5f;
         }
         else if (SetOfMosqSet.phase == SetOfMosqSet.Phase.phase_2)
         {
-            shrinkSpd = 1 * 1.6f * 1.5f;
+            shrinkSpd = 0.9f * 1.6f * 1.5f;
         }
         else if (SetOfMosqSet.phase == SetOfMosqSet.Phase.phase_3)
         {
-            shrinkSpd = 1 * 1.6f * 1.5f;
+            shrinkSpd = 0.9f * 1.65f * 1.5f;
         }
 
         size = new Vector2(size.x - shrinkSpd * Time.deltaTime, size.y - shrinkSpd * Time.deltaTime);

@@ -5019,7 +5019,7 @@ MonoBehaviour:
   startingPoint: {x: 0, y: 0, z: 0}
   isDrainingFlag: 1
   bloodEffect: {fileID: 1386654605}
-  stdSpd: 500
+  stdSpd: 7
 --- !u!54 &2403871221542226131
 Rigidbody:
   m_ObjectHideFlags: 0

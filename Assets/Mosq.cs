@@ -19,17 +19,22 @@ public class Mosq : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if(SetOfMosqSet.isTargetSkin)
         {
             if ((transform.position - target.transform.position).magnitude > 1f)
             {
-                rb.velocity = (target.transform.position - transform.position).normalized * stdSpd * Time.deltaTime;
+                Vector3 norm = (target.transform.position - transform.position).normalized;
+                norm = new Vector3(
+                    norm.x * stdSpd * Time.deltaTime,
+                    norm.y * stdSpd * Time.deltaTime,
+                    0
+                );
+                transform.position += norm;
             }
             else
             {
-                rb.velocity = Vector3.zero;
                 bloodEffect.SetActive(true);
                 if(isDrainingFlag)
                 {
@@ -40,12 +45,18 @@ public class Mosq : MonoBehaviour
         }
         else
         {
-            rb.velocity = (transform.position - startingPoint).normalized * stdSpd * 3 * Time.deltaTime;
+            Vector3 norm = (startingPoint - transform.position).normalized;
+            norm = new Vector3(
+                norm.x * stdSpd * 2.3f * Time.deltaTime,
+                norm.y * stdSpd * 2.3f * Time.deltaTime,
+                0
+            );
+
+            transform.position += norm;
             bloodEffect.SetActive(false);
 
-            if((transform.position - startingPoint).magnitude < 0.2f)
+            if((startingPoint - transform.position).magnitude < 0.2f)
             {
-                rb.velocity = Vector3.zero;
                 isDrainingFlag = true;
                 transform.position = startingPoint;
                 transform.parent.gameObject.SetActive(false);

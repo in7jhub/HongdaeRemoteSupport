@@ -18,9 +18,6 @@ public class MosqSet : MonoBehaviour
         bulletInstance.AddComponent<Rigidbody>();
         bulletInstance.GetComponent<Bullet>().setTargetMosq(targetMosq);
         bulletInstance.GetComponent<Rigidbody>().useGravity = false;
-        bulletInstance.GetComponent<Rigidbody>().velocity = (
-            targetMosq.transform.position - slingshot.transform.position
-        ).normalized * 20f;
 
         slingshotBangWake();
         sleepSlingshot();
