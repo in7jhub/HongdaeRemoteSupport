@@ -18,7 +18,7 @@ public class NarrationManager : MonoBehaviour
 
     void Update()
     {
-        if(SetOfMosqSet.gameStarted && mosqEncounterVoiceFlag)
+        if(Spawner.gameStarted && mosqEncounterVoiceFlag)
         {
             mosqEncounterVoice.SetActive(true);
             mosqEncounterVoiceFlag = false;

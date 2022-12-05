@@ -57,7 +57,7 @@ public class LastSceneText : MonoBehaviour
             rmbtext = field.text;
         }
 
-        if(SetOfMosqSet.gameCleared && flag)
+        if(Spawner.gameCleared && flag)
         {
             setOfmosqSet.SetActive(false);
 
@@ -85,7 +85,7 @@ public class LastSceneText : MonoBehaviour
             narrationFlag = false;
         }
 
-        if (SetOfMosqSet.gameCleared && field.text == "SKIN")
+        if (Spawner.gameCleared && field.text == "SKIN")
         {
             rightAnswer = true;
             skinText.color = Color.green;
@@ -101,7 +101,7 @@ public class LastSceneText : MonoBehaviour
         }
 
         // 선풍기 연출 시작 
-        if(quiz && Input.GetKeyDown(KeyCode.F4) && SetOfMosqSet.gameCleared)
+        if(quiz && Input.GetKeyDown(KeyCode.F4) && Spawner.gameCleared)
         {
             quiz = false;
             StartCoroutine(showFan());

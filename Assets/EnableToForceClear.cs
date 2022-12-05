@@ -8,6 +8,6 @@ public class EnableToForceClear : MonoBehaviour
     private void OnEnable()
     {
         esg.GetComponent<EnableToForceStart>().enabled = true;
-        SetOfMosqSet.gameCleared = true;
+        Spawner.gameCleared = true;
     }
 }

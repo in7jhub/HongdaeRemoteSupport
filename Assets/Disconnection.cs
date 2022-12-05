@@ -72,7 +72,7 @@ public class Disconnection : MonoBehaviour
     {
         lastSceneText.enabled = true;
         lastScene.GetComponent<Image>().enabled = true;
-        SetOfMosqSet.gameStarted = true;
+        Spawner.gameStarted = true;
         gameObject.SetActive(false);
     }
 }
