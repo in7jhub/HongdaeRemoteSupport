@@ -432,6 +432,10 @@ MonoBehaviour:
   slingshotBang: {fileID: 2604797162464930323}
   size: {x: 0, y: 0}
   initSize: {x: 0, y: 0}
+  shrinkSpd: 0
+  slingshotMatchingIdx: 0
+  bullet: {fileID: 5645345185503568453, guid: fdd21e7b596b9024b9900603536b093b, type: 3}
+  slingshotId: 0
 --- !u!212 &6197855741210196957
 SpriteRenderer:
   m_ObjectHideFlags: 0

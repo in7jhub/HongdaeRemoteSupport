@@ -20,7 +20,6 @@ public class LastSceneText : MonoBehaviour
     bool rightAnswer = false;
     public static bool wholeGameCompleted = false;
     public Text skinText;
-    public GameObject setOfmosqSet;
 
     public static bool isFlipped = false;
 
@@ -59,8 +58,6 @@ public class LastSceneText : MonoBehaviour
 
         if(Spawner.gameCleared && flag)
         {
-            setOfmosqSet.SetActive(false);
-
             flag = false;
             field.text = "";
             field.interactable = true;

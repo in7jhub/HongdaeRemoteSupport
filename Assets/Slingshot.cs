@@ -11,7 +11,8 @@ public class Slingshot : MonoBehaviour
     public Vector2 size;
     public Vector2 initSize;
     public float shrinkSpd = 0;
-    public bool shotFlag = true;
+    public GameObject bullet;
+    public int slingshotId;
 
     private void Start()
     {
@@ -21,27 +22,39 @@ public class Slingshot : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && shotFlag)
+        if(Input.GetMouseButtonDown(0) && !Spawner.isPause)
         {
             GameObject target = GetClickedObject();
             if(target != null && target.Equals(gameObject))
             {
-                transform.parent.GetComponent<MosqSet>().shotMosq();
-                shotFlag = false;
+                shotMosq();
+                Destroy(gameObject);
             }
         }
 
-        if (SetOfMosqSet.phase == SetOfMosqSet.Phase.phase_1)
+        if (Spawner.phase == Spawner.Phase.phase_1)
         {
             shrinkSpd = 0.9f * 1.5f;
+            if(Spawner.isTestStatic)
+            {
+                shrinkSpd = 0.2f;
+            }
         }
-        else if (SetOfMosqSet.phase == SetOfMosqSet.Phase.phase_2)
+        else if (Spawner.phase == Spawner.Phase.phase_2)
         {
-            shrinkSpd = 0.9f * 1.6f * 1.5f;
+            shrinkSpd = 0.9f * 1.6f;
+            if (Spawner.isTestStatic)
+            {
+                shrinkSpd = 0.2f;
+            }
         }
-        else if (SetOfMosqSet.phase == SetOfMosqSet.Phase.phase_3)
+        else if (Spawner.phase == Spawner.Phase.phase_3)
         {
-            shrinkSpd = 0.9f * 1.65f * 1.5f;
+            shrinkSpd = 0.9f * 1.72f;
+            if (Spawner.isTestStatic)
+            {
+                shrinkSpd = 0.2f;
+            }
         }
 
         size = new Vector2(size.x - shrinkSpd * Time.deltaTime, size.y - shrinkSpd * Time.deltaTime);
@@ -50,8 +63,22 @@ public class Slingshot : MonoBehaviour
         if(size.x < initSize.x * 0.25f)
         {
             timerImg.transform.localScale = initSize;
-            destroyWork();
+            Destroy(gameObject);
         }
+    }
+
+    public void shotMosq()
+    {
+        GameObject bulletInstance = Instantiate(bullet);
+        Spawner spawner = GameObject.Find("Spawner").GetComponent<Spawner>();
+
+        bulletInstance.transform.position = transform.position;
+        bulletInstance.AddComponent<Rigidbody>();
+        bulletInstance.GetComponent<Bullet>().setTargetMosq(
+            spawner.mosqWithIdx[slingshotId].transform
+        );
+
+        bulletInstance.GetComponent<Rigidbody>().useGravity = false;
     }
 
     private GameObject GetClickedObject()
@@ -67,12 +94,6 @@ public class Slingshot : MonoBehaviour
             target = hit.collider.gameObject;
         }
         return target;
-    }
-
-    void destroyWork()
-    {
-        gameObject.SetActive(false);
-        shotFlag = false;
     }
 
     private void OnEnable()

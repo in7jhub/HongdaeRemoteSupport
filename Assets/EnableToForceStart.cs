@@ -17,6 +17,7 @@ public class EnableToForceStart : MonoBehaviour
         disconnectImg.enabled = true;
         lastSceneText.enabled = true;
         lastScene.GetComponent<Image>().enabled = true;
+        Spawner.gameStarted = true;
         exitButtons = transform.parent.GetComponent<GameManager>().exitButtons;
         for(int i = 0; i < exitButtons.Length; i++)
         {

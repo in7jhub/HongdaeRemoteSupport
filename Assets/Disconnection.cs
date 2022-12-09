@@ -13,8 +13,8 @@ public class Disconnection : MonoBehaviour
     public GameObject exit_1;
     public GameObject exit_2;
     public GameObject lastScene;
-    public GameObject setOfMosqSet;
     public Text lastSceneText;
+    public GameObject spawner;
     // Use this for initialization
     void Start()
     {
@@ -73,6 +73,7 @@ public class Disconnection : MonoBehaviour
         lastSceneText.enabled = true;
         lastScene.GetComponent<Image>().enabled = true;
         Spawner.gameStarted = true;
+        spawner.SetActive(true);
         gameObject.SetActive(false);
     }
 }

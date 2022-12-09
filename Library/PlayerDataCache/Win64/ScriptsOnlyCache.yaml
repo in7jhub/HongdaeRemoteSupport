@@ -11,11 +11,10 @@ ScriptsOnlyBuild:
     - HitEffect
     - LastSceneText
     - Mosq
-    - MosqSet
     - NarrationManager
     - ReportOnline
-    - SetOfMosqSet
     - Slingshot
+    - Spawner
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -84,8 +83,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1742}
     - Class: 114
-      Script: {instanceID: 1986}
-    - Class: 114
       Script: {instanceID: 2020}
     - Class: 114
       Script: {instanceID: 2030}
@@ -114,23 +111,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2882}
     - Class: 114
-      Script: {instanceID: 3250}
+      Script: {instanceID: 3210}
     - Class: 114
-      Script: {instanceID: 3352}
+      Script: {instanceID: 3252}
     - Class: 114
-      Script: {instanceID: 3378}
+      Script: {instanceID: 3354}
     - Class: 114
-      Script: {instanceID: 3522}
+      Script: {instanceID: 3380}
     - Class: 114
-      Script: {instanceID: 3832}
+      Script: {instanceID: 3524}
     - Class: 114
-      Script: {instanceID: 3968}
+      Script: {instanceID: 3834}
     - Class: 114
-      Script: {instanceID: 4096}
+      Script: {instanceID: 3970}
     - Class: 114
-      Script: {instanceID: 4212}
+      Script: {instanceID: 4098}
     - Class: 114
-      Script: {instanceID: 4306}
+      Script: {instanceID: 4308}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -246,12 +243,6 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: 6d2b9e003eae9cb26731eafde8ab7efe
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SetOfMosqSet
-  - hash:
-      serializedVersion: 2
       Hash: 800c50acba124432abb4cf0d47202e06
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -348,7 +339,7 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: b672cd3ad773200b7aa90e71ec3a7bb9
+      Hash: 525112b316dcc1ebded88a97aebfe24b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LastSceneText
@@ -468,7 +459,13 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: 1d9d862ba60a1e667f331c1917e79ce2
+      Hash: 43456d77e41cc35a821cb9a12969e853
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Spawner
+  - hash:
+      serializedVersion: 2
+      Hash: 306927c65621d879adbf2d623c7c1e75
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Mosq
@@ -516,7 +513,7 @@ ScriptsOnlyBuild:
     className: EnableToForceStart
   - hash:
       serializedVersion: 2
-      Hash: b32879ceb4037a36cde2c852baffbc4b
+      Hash: 04a993f69fd37ef2c4ff766982a44f6c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Slingshot
@@ -636,13 +633,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 2ad3ac228c8a511572949af2be06b93e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MosqSet
-  - hash:
-      serializedVersion: 2
-      Hash: e5e8b7070b328499071a16f50f10bbce
+      Hash: aea78ece9b707ae68582062458060377
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Disconnection
@@ -673,4 +664,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: F:/Morgado/RemoteSupport/RemoteSupport/WindowBuild/RemoteSupport.exe
+  playerPath: C:/Users/ShuruPD1/Desktop/RemoteSupport/WindowBuild/RemoteSupport.exe
